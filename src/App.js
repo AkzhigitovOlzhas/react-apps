@@ -1,12 +1,12 @@
 import "./header.css";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
 import Game from "./Apps/TicTacToe/Game";
 import Calculator from "./Apps/Calculator/Calculator";
 import Clock from "./Apps/Clock";
 import PassValidator from "./Apps/PassValidator/PasswordValidator";
 function App(props) {
   return (
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <div className="header">
         <div className="header__links">
           <Link className="header__link" to="/">
@@ -34,7 +34,7 @@ function App(props) {
           </Route>
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
